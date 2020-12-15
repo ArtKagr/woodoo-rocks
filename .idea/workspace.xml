@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05727d77-b70d-433c-a35f-dc9b0b7d45e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/Search.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/posts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608030543195</updated>
-      <workItem from="1608030547034" duration="10340000" />
+      <workItem from="1608030547034" duration="11240000" />
     </task>
     <servers />
   </component>

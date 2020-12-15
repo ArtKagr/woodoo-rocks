@@ -34,7 +34,8 @@ export default {
   },
   methods: {
     authorName(userId) {
-      return this.users.find(user => user.id === userId).name || null
+      const currentUser = this.users.find(user => user.id === userId)
+      return currentUser && currentUser.name ? currentUser.name : null
     }
   },
   created() {
