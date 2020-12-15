@@ -4,7 +4,7 @@
       <b-input-group-prepend is-text>
         <b-icon-search></b-icon-search>
       </b-input-group-prepend>
-      <b-form-input id="filter-by-author" v-model="text" placeholder="Filter by author..."></b-form-input>
+      <b-form-input id="filter-by-author" v-model="query" placeholder="Filter by author..."></b-form-input>
     </b-input-group>
   </div>
 </template>
@@ -14,8 +14,13 @@ export default {
   name: "Search",
   data() {
     return {
-      text: null,
+      query: null,
     }
   },
+  watch: {
+    query(newValue) {
+      this.$store.commit('users/SET_CURRENT_USER', newValue)
+    },
+  }
 }
 </script>

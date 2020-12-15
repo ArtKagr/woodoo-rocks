@@ -1,11 +1,14 @@
 export const state = () => ({
   status: '',
-  users: []
+  users: [],
+  foundUser: {}
 })
 
 export const getters = {
   getStatus: (state) => state.status,
-  getUsers: (state) => state.users
+  getUsers: (state) => state.users,
+  getFoundUser: (state) => state.foundUser,
+
 }
 
 export const mutations = {
@@ -14,6 +17,10 @@ export const mutations = {
   },
   SAVE_USERS(state, users) {
     state.users = users
+  },
+  SET_CURRENT_USER(state, soughtUser) {
+    if(!soughtUser) state.foundUser = null
+    else state.foundUser = state.users.find(user => user.name.toLowerCase().match('^' + soughtUser.toLowerCase())) || null
   }
 }
 

@@ -5,7 +5,14 @@
       :key="key"
       :title="post.title"
       class="w-30 mb-3"
-    />
+    >
+      <b-card-text>
+        {{ post.body }}
+      </b-card-text>
+      <b-card-text>
+        {{ authorName(post.userId) || null }}
+      </b-card-text>
+    </b-card>
   </div>
 </template>
 
@@ -13,12 +20,22 @@
 export default {
   name: "MainPage",
   computed: {
+    foundUser() {
+      return JSON.parse(JSON.stringify(this.$store.getters['users/getFoundUser'])) || null
+    },
     posts() {
-      return JSON.parse(JSON.stringify(this.$store.getters['posts/getPosts'])) || []
+      return this.foundUser && this.foundUser.id
+        ? JSON.parse(JSON.stringify(this.$store.getters['posts/getPosts'])).filter(post => post.userId === this.foundUser.id )
+        : JSON.parse(JSON.stringify(this.$store.getters['posts/getPosts'])) || []
     },
     users() {
-      return JSON.parse(JSON.stringify(this.$store.getters['posts/getPosts'])) || []
+      return JSON.parse(JSON.stringify(this.$store.getters['users/getUsers'])) || []
     },
+  },
+  methods: {
+    authorName(userId) {
+      return this.users.find(user => user.id === userId).name || null
+    }
   },
   created() {
     this.$store.dispatch('users/fetchUsers')

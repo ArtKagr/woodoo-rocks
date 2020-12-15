@@ -1,6 +1,6 @@
 export const state = () => ({
   status: '',
-  posts: []
+  posts: [],
 })
 
 export const getters = {
@@ -14,7 +14,7 @@ export const mutations = {
   },
   SAVE_POSTS(state, posts) {
     state.posts = posts
-  }
+  },
 }
 
 export const actions = {
