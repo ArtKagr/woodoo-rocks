@@ -19,7 +19,7 @@ export const mutations = {
     state.users = users
   },
   SET_CURRENT_USER(state, soughtUser) {
-    if(!soughtUser) state.foundUser = 'reset'
+    if (!soughtUser) state.foundUser = null
     else state.foundUser = state.users.find(user => user.name.toLowerCase().match('^' + soughtUser.toLowerCase())) || null
   }
 }
