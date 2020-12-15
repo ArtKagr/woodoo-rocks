@@ -21,7 +21,8 @@ module.exports = {
   ],
   axios: {
     // prefix: '/api/',
-    baseURL: process.env.API_URL || 'http://jsonplaceholder.typicode.com/',
+    credentials: true,
+    baseURL: process.env.API_URL || 'http://jsonplaceholder.typicode.com',
   },
   /*
   ** Customize the progress bar color
